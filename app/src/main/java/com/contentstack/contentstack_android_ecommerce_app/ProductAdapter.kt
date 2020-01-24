@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.lamp_recycler_view_item.view.*
 
 
 class ProductAdapter (var lamps: ArrayList<Lamp>) : RecyclerView.Adapter<ProductAdapter.LampViewHolder>(){
@@ -20,7 +21,6 @@ class ProductAdapter (var lamps: ArrayList<Lamp>) : RecyclerView.Adapter<Product
 
     fun launchNextScreen(context: Context, lamp: Lamp): Intent {
         val intent = Intent(context, ProductActivity::class.java)
-        //val intent = Intent(context, ProductDetailActivity::class.java)
         intent.putExtra("lamp", lamp)
         return intent
     }
