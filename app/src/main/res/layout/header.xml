@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/medium"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<ImageView
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_alignParentStart="true"
+    android:background="@drawable/grey_circular_border"
+    android:padding="12dp"
+    android:src="@drawable/square_icon" />
+
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lamp"
+        android:textColor="@color/textColor"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/xsmall"
+        android:text="@string/lamp_title"
+        android:visibility="gone"
+        android:textSize="15sp" />
+</LinearLayout>
+
+<ImageView
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_alignParentEnd="true"
+    android:background="@drawable/grey_circular_border"
+    android:padding="@dimen/small"
+    android:src="@drawable/heart" />
+
+
+</RelativeLayout>

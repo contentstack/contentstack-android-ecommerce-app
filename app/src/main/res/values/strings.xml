@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">contentstack-android-ecommerce-app</string>
+    <string name="explore">EXPLORE</string>
+    <string name="lamp_title">Penelope Table Lamp</string>
+    <string name="lamp">LAMP</string>
+    <string name="btn_purchase">Purchase Now</string>
+    <string name="tagline">Even a single lamp dispels the deepest darkness.</string>
+</resources>
