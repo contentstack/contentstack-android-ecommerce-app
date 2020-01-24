@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/xsmall">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/small">
+
+        <TextView
+            android:id="@+id/titleLamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TABLE LAMP"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:padding="@dimen/xsmall"
+                android:src="@drawable/star_clr" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:padding="@dimen/xsmall"
+                android:src="@drawable/star_clr" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:padding="@dimen/xsmall"
+                android:src="@drawable/star_clr" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:padding="@dimen/xsmall"
+                android:src="@drawable/star_clr" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:padding="@dimen/xsmall"
+                android:src="@drawable/star_grey" />
+
+            <TextView
+                android:id="@+id/reviewLamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="249 Review"
+                android:textColor="@color/textColor"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/productPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:text="$90"
+        android:background="@drawable/grey_circular_border"
+        android:padding="@dimen/medium"
+        android:textColor="@color/textColor"
+        android:textSize="18sp" />
+
+</RelativeLayout>
