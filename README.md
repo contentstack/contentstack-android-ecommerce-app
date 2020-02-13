@@ -16,7 +16,7 @@ Create an Android E-Commerce app using Contentstack Android SDK.
 
 We have created an in-depth tutorial on how you can create an Android E-Commerce app Contentstack Android SDK. Refer to the steps given in the following tutorial to create a fully functional Android E-Commerce app.
 
-[Create an android e-commerce app using Contentstack Android SDK](https://www.contentstack.com/docs/example-apps/build-a-android-e-commerce-app-using-contentstacks-android-sdk)
+[Create an android e-commerce app using Contentstack Android SDK](https://www.contentstack.com/docs/sample-apps/build-a-android-e-commerce-app-using-contentstacks-android-sdk)
 
 
 ## Documentation
