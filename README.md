@@ -19,7 +19,6 @@ We have created an in-depth tutorial on how you can create an Android E-Commerce
 [Create an android e-commerce app using Contentstack Android SDK](https://www.contentstack.com/docs/developers/sample-apps/build-an-android-e-commerce-app-using-contentstack-s-android-sdk)
 
 
-
 ## Documentation
 
 Read Contentstack [docs](https://www.contentstack.com/docs)
