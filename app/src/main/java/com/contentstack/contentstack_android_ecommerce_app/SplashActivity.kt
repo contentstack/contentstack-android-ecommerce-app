@@ -3,8 +3,15 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.contentstack.sdk.*
+import com.contentstack.sdk.Contentstack
+import com.contentstack.sdk.Entry
+import com.contentstack.sdk.Error
+import com.contentstack.sdk.Query
+import com.contentstack.sdk.QueryResult
+import com.contentstack.sdk.QueryResultsCallBack
+import com.contentstack.sdk.ResponseType
 import com.contentstack.sdk.Stack
+import org.json.JSONObject
 
 
 class SplashActivity : AppCompatActivity() {
@@ -22,7 +29,11 @@ class SplashActivity : AppCompatActivity() {
     fun getLampsFromContentstack(){
 
         //setting credentials of the stack application using
-        val  stack: Stack = Contentstack.stack(applicationContext, "blt02532e5510d39dec",
+//        val  stack: Stack = Contentstack.stack(applicationContext, "blt02532e5510d39dec",
+//            "***REMOVED***","***REMOVED***")
+//        DefaultOption option = new DefaultOption();
+//        SDKUtil.jsonToHTML(null, null)
+        val  stack: Stack = Contentstack.stack(applicationContext, "blte5c67b08c76fefac",
             "***REMOVED***","***REMOVED***")
         val query:Query =  stack.contentType("ecommerce_app_android").query()
         query.find(object : QueryResultsCallBack() {
@@ -38,8 +49,10 @@ class SplashActivity : AppCompatActivity() {
                             description = parserKEY(entry, "description").toString(),
                             image = entry.toJSON().getJSONObject("image").optString("url"),
                             price = parserKEY(entry, "price").toString(),
-                            isLoved = parserKEY(entry, "isfavorite") as Boolean
+                            isLoved = parserKEY(entry, "isfavorite") as Boolean,
+                            error_message = parserKEY(entry, "error_message").toString()
                             ))
+                        listLamps.get(0).error_message
                     }
 
                     seLamps(listLamps)

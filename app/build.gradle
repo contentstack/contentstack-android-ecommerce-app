@@ -5,12 +5,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    namespace 'com.contentstack.contentstack_android_ecommerce_app'
+    compileSdkVersion 34
     defaultConfig {
         applicationId "com.contentstack.contentstack_android_ecommerce_app"
-        minSdkVersion 19
-        targetSdkVersion 29
+        minSdkVersion 23
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -35,6 +35,5 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
 
-    implementation 'com.contentstack.sdk:android:3.7.0'
-
+    implementation 'com.contentstack.sdk:android:3.15.0'
 }
