@@ -4,7 +4,7 @@ import java.io.Serializable
 
 var listLamps = ArrayList<Lamp>()
 
-data class Lamp(val title: String, val description: String, val image: String, val price: String, val isLoved: Boolean): Serializable
+data class Lamp(val title: String, val description: String, val image: String, val price: String, val isLoved: Boolean, val error_message: String): Serializable
 
 
 

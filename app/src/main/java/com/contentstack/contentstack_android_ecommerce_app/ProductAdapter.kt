@@ -58,7 +58,7 @@ class ProductAdapter (var lamps: ArrayList<Lamp>) : RecyclerView.Adapter<Product
         fun bind(lamp: Lamp) {
             Picasso.get().load(lamp.image).into(preview)
             title.text = lamp.title
-            price.text = "$${lamp.price}"
+            price.text = "£${lamp.price}"
 
             if (lamp.isLoved){ isLoved.setImageResource(R.drawable.heart_orange_fill) }
 
