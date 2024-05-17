@@ -3,7 +3,7 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
-  security:
+  security-sca:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -12,4 +12,4 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          args: --fail-on=all
+          args: --fail-on=all --all-sub-projects
