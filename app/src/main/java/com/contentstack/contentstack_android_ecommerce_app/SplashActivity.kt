@@ -29,12 +29,8 @@ class SplashActivity : AppCompatActivity() {
     fun getLampsFromContentstack(){
 
         //setting credentials of the stack application using
-//        val  stack: Stack = Contentstack.stack(applicationContext, "blt02532e5510d39dec",
-//            "cs253acbe45719247760e342eb","mobile")
-//        DefaultOption option = new DefaultOption();
-//        SDKUtil.jsonToHTML(null, null)
         val  stack: Stack = Contentstack.stack(applicationContext, "blte5c67b08c76fefac",
-            "cs06ec01ccc65b21ec4361f751","staging")
+            "***REMOVED***","***REMOVED***")
         val query:Query =  stack.contentType("ecommerce_app_android").query()
         query.find(object : QueryResultsCallBack() {
             override fun onCompletion(responseType: ResponseType?, queryresult: QueryResult?, error: Error?) {
