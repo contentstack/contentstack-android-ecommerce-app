@@ -14,13 +14,13 @@
         tools:ignore="GoogleAppIndexingWarning">
         <receiver
             android:name="com.contentstack.sdk.ConnectionStatus"
-            android:exported="true"
+            android:exported="false"
             tools:node="merge" />
         <receiver
             android:name="com.contentstack.sdk.ClearCache"
-            android:exported="true"
+            android:exported="false"
             tools:node="merge" />
-        <activity android:name=".SplashActivity" android:exported="true">
+        <activity android:name=".SplashActivity" android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
