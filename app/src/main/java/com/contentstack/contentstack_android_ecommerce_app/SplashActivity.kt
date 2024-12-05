@@ -3,6 +3,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.contentstack.contentstack_android_ecommerce_app.BuildConfig
 import com.contentstack.sdk.Contentstack
 import com.contentstack.sdk.Entry
 import com.contentstack.sdk.Error
@@ -17,11 +18,14 @@ import org.json.JSONObject
 class SplashActivity : AppCompatActivity() {
 
     val listLamps = ArrayList<Lamp>()
+    val apiKey = BuildConfig.API_KEY
+    val accessToken = BuildConfig.ACCESS_TOKEN
+    val environment = BuildConfig.ENVIRONMENT
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-
         getLampsFromContentstack()
     }
 
@@ -29,12 +33,8 @@ class SplashActivity : AppCompatActivity() {
     fun getLampsFromContentstack(){
 
         //setting credentials of the stack application using
-//        val  stack: Stack = Contentstack.stack(applicationContext, "blt02532e5510d39dec",
-//            "cs253acbe45719247760e342eb","mobile")
-//        DefaultOption option = new DefaultOption();
-//        SDKUtil.jsonToHTML(null, null)
-        val  stack: Stack = Contentstack.stack(applicationContext, "blte5c67b08c76fefac",
-            "cs06ec01ccc65b21ec4361f751","staging")
+        val  stack: Stack = Contentstack.stack(applicationContext, apiKey,
+            accessToken,environment)
         val query:Query =  stack.contentType("ecommerce_app_android").query()
         query.find(object : QueryResultsCallBack() {
             override fun onCompletion(responseType: ResponseType?, queryresult: QueryResult?, error: Error?) {

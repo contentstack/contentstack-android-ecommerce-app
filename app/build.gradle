@@ -7,6 +7,10 @@ apply plugin: 'kotlin-android-extensions'
 android {
     namespace 'com.contentstack.contentstack_android_ecommerce_app'
     compileSdkVersion 34
+
+    def localProperties = new Properties()
+    localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+
     defaultConfig {
         applicationId "com.contentstack.contentstack_android_ecommerce_app"
         minSdkVersion 23
@@ -15,13 +19,20 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
+        debug {
+            buildConfigField "String", "API_KEY", localProperties['API_KEY'] ?: ""
+            buildConfigField "String", "ACCESS_TOKEN", localProperties['ACCESS_TOKEN'] ?: ""
+            buildConfigField "String", "ENVIRONMENT", localProperties['ENVIRONMENT'] ?: ""
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 }
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])

@@ -1,5 +1,6 @@
 package com.contentstack.contentstack_android_ecommerce_app
 import android.os.Bundle
+import android.text.Html
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
@@ -14,7 +15,13 @@ class ViewJSONRte: AppCompatActivity() {
 
         val webView: WebView = findViewById(R.id.webView)
         // Enable Javascript (if your HTML content requires it)
-        webView.settings.javaScriptEnabled = true
+        webView.settings.javaScriptEnabled = false
+        webView.webViewClient = object : WebViewClient() {
+            override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
+                // Allow only trusted URLs (or handle them inside the WebView)
+                return url.startsWith("https://your.trusted.domain")
+            }
+        }
 
         val lamp = intent.getSerializableExtra("lamp") as Lamp
         val keyPath = arrayOf("error_message")
@@ -25,9 +32,10 @@ class ViewJSONRte: AppCompatActivity() {
         ))
 
         SDKUtil.jsonToHTML(jsonObject, keyPath, DefaultOption())
-        // Load HTML content into the WebView
-        webView.loadDataWithBaseURL(null, jsonObject.getString("error_message"), "text/html", "utf-8", null)
-        // Optionally, you can use WebViewClient to handle page within the WebView
-        webView.webViewClient = WebViewClient()
+        // Sanitize the HTML to prevent XSS
+        val safeHtmlContent = Html.escapeHtml(jsonObject.getString("error_message"))
+
+        // Load the sanitized content into the WebView
+        webView.loadDataWithBaseURL(null, safeHtmlContent, "text/html", "utf-8", null)
     }
 }
